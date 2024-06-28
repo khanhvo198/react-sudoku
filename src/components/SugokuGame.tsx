@@ -4,7 +4,7 @@ type Response = {
   board: number[][];
 };
 
-const encodeBoard = (board) =>
+const encodeBoard = (board: any[]) =>
   board.reduce(
     (result, row, i) =>
       result +
@@ -12,7 +12,7 @@ const encodeBoard = (board) =>
     ""
   );
 
-const encodeParams = (params) =>
+const encodeParams = (params: any) =>
   Object.keys(params)
     .map((key) => key + "=" + `%5B${encodeBoard(params[key])}%5D`)
     .join("&");
